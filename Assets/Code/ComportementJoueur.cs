@@ -6,8 +6,9 @@ public class ComportementJoueur : MonoBehaviour
 {
     public GameObject Joueur;
     public bool toucheSol = true;
-    private bool positionSuperieur = true ; 
-
+    private bool positionSuperieur = true ;
+    private int Score = 0;
+    private int PointsDeVie = 3;
 
     void Start()
     {
@@ -57,12 +58,26 @@ public class ComportementJoueur : MonoBehaviour
         {
 
         }
+        if (PointsDeVie <= 0)
+        {
+            Debug.Log("T'es mort fdp !");
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Plateforme")
         {
             toucheSol = true;
+        }
+        if (other.gameObject.CompareTag("Item"))
+        {
+            Score = Score + 10;
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            PointsDeVie = PointsDeVie - 1;
+            Destroy(other.gameObject);
         }
     }
 }
