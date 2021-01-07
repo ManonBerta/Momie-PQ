@@ -23,11 +23,11 @@ public class ComportementJoueur : MonoBehaviour
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
 
         }
-
         if (Input.GetKeyUp(KeyCode.DownArrow)) //Rétablir glissade
         {
             transform.RotateAround(Joueur.transform.position, Vector3.forward, -90);
         }
+
         if (toucheSol) // on détecte si notre personnage touche le sol
         {
             if (Input.GetKeyDown(KeyCode.UpArrow)) // sauter
@@ -35,18 +35,19 @@ public class ComportementJoueur : MonoBehaviour
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 250)); // fait sauter le personnage
                 toucheSol = false;
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Space)) // chagement de plateforme
-        {
-            if (positionSuperieur)
+
+            if (Input.GetKeyDown(KeyCode.Space)) // chagement de plateforme
             {
-                Joueur.transform.Translate(0,-6,-2) ;
-                positionSuperieur = false;
-            }
-            else
-            {
-                Joueur.transform.Translate(0, 6, 2);
-                positionSuperieur = true;
+                if (positionSuperieur)
+                {
+                    Joueur.transform.Translate(0, -6, -2);
+                    positionSuperieur = false;
+                }
+                else
+                {
+                    Joueur.transform.Translate(0, 6, 2);
+                    positionSuperieur = true;
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow)) //ralentir
