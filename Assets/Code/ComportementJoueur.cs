@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ComportementJoueur : MonoBehaviour
 {
@@ -9,10 +11,13 @@ public class ComportementJoueur : MonoBehaviour
     private bool positionSuperieur = true ;
     private int Score = 0;
     private int PointsDeVie = 3;
+    public GameObject PanelGameOver;
+    public TextMeshProUGUI Vies;
+    public TextMeshProUGUI AfficheScore;
 
     void Start()
     {
-
+        PanelGameOver.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -61,6 +66,7 @@ public class ComportementJoueur : MonoBehaviour
         }
         if (PointsDeVie <= 0)
         {
+            PanelGameOver.SetActive(true);
             Debug.Log("T'es mort fdp !");
         }
     }
@@ -72,12 +78,14 @@ public class ComportementJoueur : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Item"))
         {
-            Score = Score + 10;
+            Score = Score + 100;
+            AfficheScore.text = "Score : " + Score;
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Obstacle"))
         {
             PointsDeVie = PointsDeVie - 1;
+            Vies.text = "Vies : " + PointsDeVie;
             Destroy(other.gameObject);
         }
     }
