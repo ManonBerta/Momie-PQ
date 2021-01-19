@@ -8,6 +8,7 @@ public class BoiteQuiSpawn : MonoBehaviour
     public GameObject scarabeePrefab;
     public GameObject pilierPrefab;
     public GameObject pqPrefab;
+    public int NombreCollider;
     public float TempsApparitionCaisse = 2;  // Temps entre chaque apparition
     public float TempsApparitionPilier = 5;
     public float TempsApparitionScarabee = 3;
@@ -22,20 +23,42 @@ public class BoiteQuiSpawn : MonoBehaviour
         StartCoroutine(SpawnDePiliers());
         StartCoroutine(SpawnDePQ());
     }
+
+    private void OnTriggerEnter2D(Collider2D Col)
+    {
+            NombreCollider = NombreCollider + 1;
+        
+    }
+
+    void OnTriggerExit2D(Collider2D Col)
+    {
+
+            NombreCollider = NombreCollider - 1;
+        
+    }
     private void SpawnCaisse() //fonction pour les caisses
     {
-        GameObject caisse = Instantiate(caissePrefab) as GameObject;
-        caisse.transform.position = new Vector2(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
+        if (NombreCollider <= 3)
+        {
+            GameObject caisse = Instantiate(caissePrefab) as GameObject;
+            caisse.transform.position = new Vector2(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
+        }
     }
     private void SpawnScarabée() //fonction pour les scarabées
     {
+        if (NombreCollider <= 3)
+        {
         GameObject scarabee = Instantiate(scarabeePrefab) as GameObject;
         scarabee.transform.position = new Vector2(bordEcran.x * -2, -2.30f); //Coordonées où il apparait
     }
+}
     private void SpawnPilier() //fonction pour les piliers
     {
-        GameObject pilier = Instantiate(pilierPrefab) as GameObject;
-        pilier.transform.position = new Vector2(bordEcran.x * -2, -1.630f); //Coordonées où il apparait
+        if (NombreCollider <= 3)
+        {
+            GameObject pilier = Instantiate(pilierPrefab) as GameObject;
+            pilier.transform.position = new Vector2(bordEcran.x * -2, -1.630f); //Coordonées où il apparait
+        }
     }
     private void SpawnPQ() //fonction pour le PQ
     {
