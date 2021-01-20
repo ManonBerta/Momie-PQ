@@ -7,6 +7,7 @@ public class BoiteQuiSpawn : MonoBehaviour
     public GameObject caissePrefab;  //On met tous les préfab en gameobject
     public GameObject scarabeePrefab;
     public GameObject pilierPrefab;
+    public GameObject PetitPotPrefab;
     public GameObject ObstacleDoubleSSPrefab;
     public GameObject ObstacleDoubleSGPrefab;
     public GameObject ObstacleDoubleGSPrefab;
@@ -29,7 +30,7 @@ public class BoiteQuiSpawn : MonoBehaviour
 
     private void SpawnObstacle() //fonction pour les caisses
     {
-        NombreSpawn = Random.Range(0, 3);
+        NombreSpawn = Random.Range(0, 4);
 
         if (NombreSpawn == 0)
         {
@@ -69,6 +70,19 @@ public class BoiteQuiSpawn : MonoBehaviour
             else
             {
                 pilier.transform.position = new Vector3(bordEcran.x * -2, 4.40f);
+            }
+        }
+
+        else if (NombreSpawn == 3)
+        {
+            GameObject PetitPot = Instantiate(PetitPotPrefab) as GameObject;
+            if (Random.Range(0, 2) == 0)
+            {
+                PetitPot.transform.position = new Vector3(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
+            }
+            else
+            {
+                PetitPot.transform.position = new Vector3(bordEcran.x * -2, 2.50f); //Coordonées où il appara
             }
         }
 
