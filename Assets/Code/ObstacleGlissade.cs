@@ -6,7 +6,6 @@ public class ObstacleGlissade : MonoBehaviour
 {
     public float Vitesse = 10;   // Vitesse du scarabée
     private Rigidbody2D rb;
-    public Rigidbody2D ColliderSpawn;
     private Vector2 bordEcran;  // Bord de l'écran 
     // Start is called before the first frame update
     void Start()
