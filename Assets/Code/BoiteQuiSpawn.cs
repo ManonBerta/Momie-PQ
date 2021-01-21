@@ -37,7 +37,7 @@ public class BoiteQuiSpawn : MonoBehaviour
         {
             GameObject caisse = Instantiate(caissePrefab) as GameObject;
           
-                caisse.transform.position = new Vector3(bordEcran.x * -2, -3.11f); //Coordonées où il apparait
+                caisse.transform.position = new Vector3(bordEcran.x * -2, -3.32f); //Coordonées où il apparait
             
            
         }
@@ -57,11 +57,11 @@ public class BoiteQuiSpawn : MonoBehaviour
             GameObject pilier = Instantiate(pilierPrefab) as GameObject;
             if (Random.Range(0, 2) == 0)
             {
-                pilier.transform.position = new Vector3(bordEcran.x * -2, -0.85f); //Coordonées où il apparait
+                pilier.transform.position = new Vector3(bordEcran.x * -2, -1.06f); //Coordonées où il apparait
             }
             else
             {
-                pilier.transform.position = new Vector3(bordEcran.x * -2, 4.92f);
+                pilier.transform.position = new Vector3(bordEcran.x * -2, 4.77f);
             }
         }
 
@@ -69,7 +69,7 @@ public class BoiteQuiSpawn : MonoBehaviour
         {
             GameObject PetitPot = Instantiate(PetitPotPrefab) as GameObject;
           
-                PetitPot.transform.position = new Vector3(bordEcran.x * -2, -3.27f); //Coordonées où il apparait
+                PetitPot.transform.position = new Vector3(bordEcran.x * -2, -3.52f); //Coordonées où il apparait
            
                
         }
@@ -84,7 +84,7 @@ public class BoiteQuiSpawn : MonoBehaviour
                 GameObject caisse = Instantiate(caissePrefab) as GameObject;
 
                 
-                    caisse.transform.position = new Vector3(bordEcran.x * -2, 2.71f); //Coordonées où il appara
+                    caisse.transform.position = new Vector3(bordEcran.x * -2, 2.51f); //Coordonées où il appara
                 
             }
 
@@ -108,7 +108,7 @@ public class BoiteQuiSpawn : MonoBehaviour
                 
                 
                 
-                    PetitPot.transform.position = new Vector3(bordEcran.x * -2, 2.50f); //Coordonées où il appara
+                    PetitPot.transform.position = new Vector3(bordEcran.x * -2, 2.32f); //Coordonées où il appara
                 
             }
         }
