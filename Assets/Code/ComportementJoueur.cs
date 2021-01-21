@@ -34,6 +34,7 @@ public class ComportementJoueur : MonoBehaviour
         {
             BugSpace = 1;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
+            Joueur.transform.Translate(1, 0, 0);
 
         }
         if (Input.GetKeyUp(KeyCode.DownArrow)) //Rétablir glissade
