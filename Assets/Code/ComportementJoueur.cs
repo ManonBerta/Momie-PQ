@@ -45,13 +45,15 @@ public class ComportementJoueur : MonoBehaviour
             {
                 if (positionSuperieur)
                 {
-                    Joueur.transform.Translate(0, -6, -2);
+                    Joueur.transform.Translate(0, -6, 2);
                     positionSuperieur = false;
+                    Debug.Log(Joueur.transform.position);
                 }
                 else
                 {
-                    Joueur.transform.Translate(0, 6, 2);
+                    Joueur.transform.Translate(0, 6, -2);
                     positionSuperieur = true;
+                    Debug.Log(Joueur.transform.position);
                 }
             }
         }
@@ -67,7 +69,6 @@ public class ComportementJoueur : MonoBehaviour
         if (PointsDeVie <= 0)
         {
             PanelGameOver.SetActive(true);
-            Debug.Log("T'es mort fdp !");
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
