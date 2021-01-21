@@ -760,6 +760,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joueur: {fileID: 1234334722}
   toucheSol: 1
+  ScoreFloat: 0
+  Score: 0
+  BugSpace: 0
   PanelGameOver: {fileID: 1482340799}
   Vies: {fileID: 1740270378}
   AfficheScore: {fileID: 896456326}
@@ -770,7 +773,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234334722}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -905,13 +908,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234334722}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016030073, y: 0}
+  m_Offset: {x: 0.03568971, y: -0.15952122}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -922,7 +925,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3304477, y: 3}
+  m_Size: {x: 0.8109081, y: 2.6809576}
   m_EdgeRadius: 0
 --- !u!1 &1256583593
 GameObject:
@@ -2777,14 +2780,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caissePrefab: {fileID: 4781916910849026029, guid: 38cfb8869f35000448070ec452526914, type: 3}
   scarabeePrefab: {fileID: 6439782276828209900, guid: 8df74a1e7afeb514e9660d4f73fbd71c, type: 3}
-  pilierPrefab: {fileID: 4791621793790382638, guid: 4c7c6df9cbd90d14cb910ee1051c91ed, type: 3}
+  pilierPrefab: {fileID: 3608625403461249522, guid: 9ee1a2dc862f25d47b4b86ee38a24f6b, type: 3}
   PetitPotPrefab: {fileID: 7619815900679986095, guid: 359ad30ee0aa26a4da0ff03101162cdc, type: 3}
   ObstacleDoubleSSPrefab: {fileID: 0}
   ObstacleDoubleSGPrefab: {fileID: 0}
   ObstacleDoubleGSPrefab: {fileID: 0}
   ObstacleDoubleGGPrefab: {fileID: 0}
   pqPrefab: {fileID: 8693904737378653976, guid: 7d8d1a3a047ae6b4387000056e8c0076, type: 3}
-  TempsApparitionObstacle: 1
+  TempsApparitionObstacle: 1.5
   TempsApparitionPQ: 0
   NombreSpawn: 0
   NombrePQ: 0
@@ -2950,6 +2953,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joueur: {fileID: 1234334722}
   toucheSol: 1
+  ScoreFloat: 0
+  Score: 0
+  BugSpace: 0
   PanelGameOver: {fileID: 1482340799}
   Vies: {fileID: 1740270378}
   AfficheScore: {fileID: 896456326}

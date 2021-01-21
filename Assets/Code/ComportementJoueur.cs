@@ -9,8 +9,10 @@ public class ComportementJoueur : MonoBehaviour
     public GameObject Joueur;
     public bool toucheSol = true;
     private bool positionSuperieur = true ;
-    private int Score = 0;
+    public float ScoreFloat = 0;
+    public int Score = 0;
     private int PointsDeVie = 3;
+    public int BugSpace = 0;
     public GameObject PanelGameOver;
     public TextMeshProUGUI Vies;
     public TextMeshProUGUI AfficheScore;
@@ -18,18 +20,25 @@ public class ComportementJoueur : MonoBehaviour
     void Start()
     {
         PanelGameOver.SetActive(false);
+        Time.timeScale = 1;
     }
     // Update is called once per frame
     void Update()
     {
+        ScoreFloat += Time.deltaTime;
+        Score = Mathf.FloorToInt(ScoreFloat);
+        AfficheScore.text = "Score : " + Score;
+
+
         if (Input.GetKeyDown(KeyCode.DownArrow)) //glisser 
         {
-
+            BugSpace = 1;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
 
         }
         if (Input.GetKeyUp(KeyCode.DownArrow)) //Rétablir glissade
         {
+            BugSpace = 0;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, -90);
         }
 
@@ -37,11 +46,11 @@ public class ComportementJoueur : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow)) // sauter
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 250)); // fait sauter le personnage
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300)); // fait sauter le personnage
                 toucheSol = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space)) // chagement de plateforme
+            if (Input.GetKeyDown(KeyCode.Space) && BugSpace == 0) // chagement de plateforme
             {
                 if (positionSuperieur)
                 {
@@ -69,7 +78,9 @@ public class ComportementJoueur : MonoBehaviour
         if (PointsDeVie <= 0)
         {
             PanelGameOver.SetActive(true);
+            Time.timeScale = 0;
         }
+    
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
