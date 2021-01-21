@@ -13,7 +13,7 @@ public class BoiteQuiSpawn : MonoBehaviour
     public GameObject ObstacleDoubleGSPrefab;
     public GameObject ObstacleDoubleGGPrefab;
     public GameObject pqPrefab;
-    public float TempsApparitionObstacle = 1;
+    public float TempsApparitionObstacle = 15f;
     public float TempsApparitionPQ;
     public int NombreSpawn;
     public int NombrePQ;
@@ -22,7 +22,8 @@ public class BoiteQuiSpawn : MonoBehaviour
     void Start()
     {
         bordEcran = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z)); // Définition bord écran
-        StartCoroutine(SpawnDeObstacle()); // On appelle les coroutines du bas à se répéter
+        StartCoroutine(SpawnDeObstacle());
+        StartCoroutine(SpawnDeObstacleHaut());// On appelle les coroutines du bas à se répéter
         //StartCoroutine(SpawnDeScarabees());
         //StartCoroutine(Spawn());
         StartCoroutine(SpawnDePQ());
@@ -35,28 +36,19 @@ public class BoiteQuiSpawn : MonoBehaviour
         if (NombreSpawn == 0)
         {
             GameObject caisse = Instantiate(caissePrefab) as GameObject;
-            if (Random.Range(0, 2) == 0)
-            {
-                caisse.transform.position = new Vector3(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
-            }
-            else
-            {
-                caisse.transform.position = new Vector3(bordEcran.x * -2, 2.50f); //Coordonées où il appara
-            }
+          
+                caisse.transform.position = new Vector3(bordEcran.x * -2, -3.11f); //Coordonées où il apparait
+            
+           
         }
 
 
         else if (NombreSpawn == 1)
         {
             GameObject scarabee = Instantiate(scarabeePrefab) as GameObject;
-            if (Random.Range(0, 2) == 0)
-            {
+            
                 scarabee.transform.position = new Vector3(bordEcran.x * -2, -2.05f); //Coordonées où il apparait
-            }
-            else
-            {
-                scarabee.transform.position = new Vector3(bordEcran.x * -2, 3.90f);
-            }
+           
         }
 
 
@@ -65,77 +57,112 @@ public class BoiteQuiSpawn : MonoBehaviour
             GameObject pilier = Instantiate(pilierPrefab) as GameObject;
             if (Random.Range(0, 2) == 0)
             {
-                pilier.transform.position = new Vector3(bordEcran.x * -2, -1.630f); //Coordonées où il apparait
+                pilier.transform.position = new Vector3(bordEcran.x * -2, -0.85f); //Coordonées où il apparait
             }
             else
             {
-                pilier.transform.position = new Vector3(bordEcran.x * -2, 4.40f);
+                pilier.transform.position = new Vector3(bordEcran.x * -2, 4.92f);
             }
         }
 
         else if (NombreSpawn == 3)
         {
             GameObject PetitPot = Instantiate(PetitPotPrefab) as GameObject;
-            if (Random.Range(0, 2) == 0)
+          
+                PetitPot.transform.position = new Vector3(bordEcran.x * -2, -3.27f); //Coordonées où il apparait
+           
+               
+        }
+    }
+
+        private void SpawnObstacleHaut() //fonction pour les caisses
+        {
+            NombreSpawn = Random.Range(0, 3);
+
+            if (NombreSpawn == 0)
             {
-                PetitPot.transform.position = new Vector3(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
+                GameObject caisse = Instantiate(caissePrefab) as GameObject;
+
+                
+                    caisse.transform.position = new Vector3(bordEcran.x * -2, 2.71f); //Coordonées où il appara
+                
             }
-            else
+
+
+            else if (NombreSpawn == 1)
             {
-                PetitPot.transform.position = new Vector3(bordEcran.x * -2, 2.50f); //Coordonées où il appara
+                GameObject scarabee = Instantiate(scarabeePrefab) as GameObject;
+                
+      
+              
+                    scarabee.transform.position = new Vector3(bordEcran.x * -2, 3.90f);
+                
+            }
+
+
+            else if (NombreSpawn == 2)
+            {
+                GameObject PetitPot = Instantiate(PetitPotPrefab) as GameObject;
+                
+        
+                
+                
+                
+                    PetitPot.transform.position = new Vector3(bordEcran.x * -2, 2.50f); //Coordonées où il appara
+                
             }
         }
 
-        /*else if (NombreSpawn == 3)
-        {
-            GameObject ObstacleDoubleSS = Instantiate(ObstacleDoubleSSPrefab) as GameObject;
-            if (Random.Range(0, 2) == 0)
+            /*else if (NombreSpawn == 3)
             {
-                ObstacleDoubleSS.transform.position = new Vector3(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
+                GameObject ObstacleDoubleSS = Instantiate(ObstacleDoubleSSPrefab) as GameObject;
+                if (Random.Range(0, 2) == 0)
+                {
+                    ObstacleDoubleSS.transform.position = new Vector3(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
+                }
+                else
+                {
+                    ObstacleDoubleSS.transform.position = new Vector3(bordEcran.x * -2, 2.50f);
+                }
             }
-            else
+            else if (NombreSpawn == 4)
             {
-                ObstacleDoubleSS.transform.position = new Vector3(bordEcran.x * -2, 2.50f);
+                GameObject ObstacleDoubleGG = Instantiate(ObstacleDoubleGGPrefab) as GameObject;
+                if (Random.Range(0, 2) == 0)
+                {
+                    ObstacleDoubleGG.transform.position = new Vector3(bordEcran.x * -2, -2.05f); //Coordonées où il apparait
+                }
+                else
+                {
+                    ObstacleDoubleGG.transform.position = new Vector3(bordEcran.x * -2, 3.90f);
+                }
             }
-        }
-        else if (NombreSpawn == 4)
-        {
-            GameObject ObstacleDoubleGG = Instantiate(ObstacleDoubleGGPrefab) as GameObject;
-            if (Random.Range(0, 2) == 0)
+            else if (NombreSpawn == 5)
             {
-                ObstacleDoubleGG.transform.position = new Vector3(bordEcran.x * -2, -2.05f); //Coordonées où il apparait
+                GameObject ObstacleDoubleGS = Instantiate(ObstacleDoubleGSPrefab) as GameObject;
+                if (Random.Range(0, 2) == 0)
+                {
+                    ObstacleDoubleGS.transform.position = new Vector3(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
+                }
+                else
+                {
+                    ObstacleDoubleGS.transform.position = new Vector3(bordEcran.x * -2, 2.50f);
+                }
             }
-            else
+            else if (NombreSpawn == 6)
             {
-                ObstacleDoubleGG.transform.position = new Vector3(bordEcran.x * -2, 3.90f);
-            }
-        }
-        else if (NombreSpawn == 5)
-        {
-            GameObject ObstacleDoubleGS = Instantiate(ObstacleDoubleGSPrefab) as GameObject;
-            if (Random.Range(0, 2) == 0)
-            {
-                ObstacleDoubleGS.transform.position = new Vector3(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
-            }
-            else
-            {
-                ObstacleDoubleGS.transform.position = new Vector3(bordEcran.x * -2, 2.50f);
-            }
-        }
-        else if (NombreSpawn == 6)
-        {
-            GameObject ObstacleDoubleSG = Instantiate(ObstacleDoubleSGPrefab) as GameObject;
-            if (Random.Range(0, 2) == 0)
-            {
-                ObstacleDoubleSG.transform.position = new Vector3(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
-            }
-            else
-            {
-                ObstacleDoubleSG.transform.position = new Vector3(bordEcran.x * -2, 2.50f);
-            }
-        }*/
+                GameObject ObstacleDoubleSG = Instantiate(ObstacleDoubleSGPrefab) as GameObject;
+                if (Random.Range(0, 2) == 0)
+                {
+                    ObstacleDoubleSG.transform.position = new Vector3(bordEcran.x * -2, -3.45f); //Coordonées où il apparait
+                }
+                else
+                {
+                    ObstacleDoubleSG.transform.position = new Vector3(bordEcran.x * -2, 2.50f);
+                }
+            }*/
 
-    } 
+        
     /* private void SpawnScarabée() //fonction pour les scarabées
      {
 
@@ -173,6 +200,15 @@ public class BoiteQuiSpawn : MonoBehaviour
         {
             yield return new WaitForSeconds(TempsApparitionObstacle);
             SpawnObstacle();
+        }
+    }
+
+    IEnumerator SpawnDeObstacleHaut()  //Permet de faire en boucle l'apparition des trucs
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(TempsApparitionObstacle);
+            SpawnObstacleHaut();
         }
     }
     /*IEnumerator SpawnDeScarabees()  //Permet de faire en boucle l'apparition des trucs
