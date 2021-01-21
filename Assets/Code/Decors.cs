@@ -30,7 +30,7 @@ public class Decors : MonoBehaviour
         {
             GameObject c = Instantiate(clone) as GameObject;
             c.transform.SetParent(obj.transform);
-            c.transform.position = new Vector3(objLargeur * i -5, obj.transform.position.y, obj.transform.position.z);
+            c.transform.position = new Vector3(objLargeur * i -10, obj.transform.position.y, obj.transform.position.z);
             c.name = obj.name + i;
         }
         Destroy(clone); 
