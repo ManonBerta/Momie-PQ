@@ -25,12 +25,12 @@ public class Decors : MonoBehaviour
         objLargeur = obj.GetComponent<SpriteRenderer>().bounds.size.x; // largeur objet
         int nbcopie = (int)Mathf.Ceil(limiteEcrant.x * 2 / objLargeur); // calcule du nombre de copie pour un ecran
         GameObject clone = Instantiate(obj) as GameObject;
-        nbcopie = nbcopie * (-1) +2;
+        nbcopie = nbcopie * (-1) +3;
         for (int i = 0; i <= nbcopie; i++) //crée a la suite les copies
         {
             GameObject c = Instantiate(clone) as GameObject;
             c.transform.SetParent(obj.transform);
-            c.transform.position = new Vector3(objLargeur * i, obj.transform.position.y, obj.transform.position.z);
+            c.transform.position = new Vector3(objLargeur * i -5, obj.transform.position.y, obj.transform.position.z);
             c.name = obj.name + i;
         }
         Destroy(clone); 
@@ -44,12 +44,12 @@ public class Decors : MonoBehaviour
             GameObject premiereEnfant = enfant[1].gameObject; // premiere element de la liste
             GameObject dernierEnfant = enfant[enfant.Length - 1].gameObject; // deuxieme element de la liste
             float halfObjectWidth = dernierEnfant.GetComponent<SpriteRenderer>().bounds.extents.x + enchevetrement; 
-            if (transform.position.x + limiteEcrant.x + objLargeur +5 > dernierEnfant.transform.position.x + halfObjectWidth)
+            if (transform.position.x + limiteEcrant.x + objLargeur +20 > dernierEnfant.transform.position.x + halfObjectWidth)
             {
                 premiereEnfant.transform.SetAsLastSibling();
                 premiereEnfant.transform.position = new Vector3(dernierEnfant.transform.position.x + halfObjectWidth * 2, dernierEnfant.transform.position.y, dernierEnfant.transform.position.z);
             }
-            else if (transform.position.x - limiteEcrant.x - objLargeur +5 < premiereEnfant.transform.position.x - halfObjectWidth)
+            else if (transform.position.x - limiteEcrant.x - objLargeur +20 < premiereEnfant.transform.position.x - halfObjectWidth)
             {
                 dernierEnfant.transform.SetAsFirstSibling();
                 dernierEnfant.transform.position = new Vector3(premiereEnfant.transform.position.x - halfObjectWidth * 2, premiereEnfant.transform.position.y, premiereEnfant.transform.position.z);
