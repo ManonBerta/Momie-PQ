@@ -90,8 +90,8 @@ public class ComportementJoueur : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Item"))
         {
-            Score = Score + 100;
-            AfficheScore.text = "Score : " + Score;
+            ScoreFloat = ScoreFloat + 100;
+            AfficheScore.text = "Score : " + ScoreFloat;
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Obstacle"))
