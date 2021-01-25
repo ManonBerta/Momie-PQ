@@ -9,6 +9,7 @@ public class ComportementJoueur : MonoBehaviour
     public GameObject Joueur;
     public bool toucheSol = true;
     private bool positionSuperieur = true ;
+    private bool saut = true;
     public float ScoreFloat = 0;
     public int Score = 0;
     private int PointsDeVie = 3;
@@ -33,6 +34,7 @@ public class ComportementJoueur : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow)) //glisser 
         {
             BugSpace = 1;
+            saut = false;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
             Joueur.transform.Translate(1, 0, 0);
 
@@ -40,6 +42,7 @@ public class ComportementJoueur : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.DownArrow)) //Rétablir glissade
         {
             BugSpace = 0;
+            saut = true;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, -90);
         }
 
@@ -47,8 +50,12 @@ public class ComportementJoueur : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow)) // sauter
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300)); // fait sauter le personnage
-                toucheSol = false;
+                if (saut)
+                {
+                    GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300)); // fait sauter le personnage
+                    toucheSol = false;
+                    saut = false;
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && BugSpace == 0) // chagement de plateforme
@@ -88,6 +95,7 @@ public class ComportementJoueur : MonoBehaviour
         if (other.gameObject.tag == "Plateforme")
         {
             toucheSol = true;
+            saut = true;
         }
         if (other.gameObject.CompareTag("Item"))
         {
