@@ -7,6 +7,7 @@ using TMPro;
 public class ComportementJoueur : MonoBehaviour
 {
     public GameObject Joueur;
+    public Collider2D HBjoueur;
     public bool toucheSol = true;
     private bool positionSuperieur = true ;
     private bool saut = true;
@@ -35,10 +36,10 @@ public class ComportementJoueur : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) //glisser 
         {
-            BugSpace = 1;
+            BugSpace = 1; // Empêche le joueur d'utiliser espace en pleine glissade
             saut = false;
-            transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
-            Joueur.transform.Translate(1, 0, 0);
+            transform.RotateAround(HBjoueur.transform.position, Vector3.forward, 90);
+            HBjoueur.transform.Translate(1, 0, 0);
             animator.SetBool("Dash", true);
 
         }
@@ -46,7 +47,7 @@ public class ComportementJoueur : MonoBehaviour
         {
             BugSpace = 0;
             saut = true;
-            transform.RotateAround(Joueur.transform.position, Vector3.forward, -90);
+            transform.RotateAround(HBjoueur.transform.position, Vector3.forward, -90);
             animator.SetBool("Dash", false);
         }
 
