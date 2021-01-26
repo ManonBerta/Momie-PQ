@@ -39,6 +39,7 @@ public class ComportementJoueur : MonoBehaviour
             saut = false;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
             Joueur.transform.Translate(1, 0, 0);
+            animator.SetBool("Dash", true);
 
         }
         if (Input.GetKeyUp(KeyCode.DownArrow)) //Rétablir glissade
@@ -46,6 +47,7 @@ public class ComportementJoueur : MonoBehaviour
             BugSpace = 0;
             saut = true;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, -90);
+            animator.SetBool("Dash", false);
         }
 
         if (toucheSol) // on détecte si notre personnage touche le sol
