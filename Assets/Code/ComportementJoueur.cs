@@ -16,6 +16,7 @@ public class ComportementJoueur : MonoBehaviour
     public int BugSpace = 0;
     public GameObject PanelGameOver;
     public TextMeshProUGUI Vies;
+    public Animator animator;
     public TextMeshProUGUI AfficheScore;
 
     void Start()
@@ -54,6 +55,7 @@ public class ComportementJoueur : MonoBehaviour
                 {
                     GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300)); // fait sauter le personnage
                     toucheSol = false;
+                    animator.SetBool("saut", false);
                     saut = false;
                 }
             }
@@ -95,6 +97,7 @@ public class ComportementJoueur : MonoBehaviour
         if (other.gameObject.tag == "Plateforme")
         {
             toucheSol = true;
+            animator.SetBool("saut", true);
             saut = true;
         }
         if (other.gameObject.CompareTag("Item"))

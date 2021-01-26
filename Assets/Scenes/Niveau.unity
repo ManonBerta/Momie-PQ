@@ -766,6 +766,7 @@ MonoBehaviour:
   BugSpace: 0
   PanelGameOver: {fileID: 1482340799}
   Vies: {fileID: 1740270378}
+  animator: {fileID: 1234334729}
   AfficheScore: {fileID: 896456326}
 --- !u!60 &1234334724
 PolygonCollider2D:
@@ -2979,6 +2980,7 @@ MonoBehaviour:
   BugSpace: 0
   PanelGameOver: {fileID: 1482340799}
   Vies: {fileID: 1740270378}
+  animator: {fileID: 0}
   AfficheScore: {fileID: 896456326}
 --- !u!1 &1482340799
 GameObject:
