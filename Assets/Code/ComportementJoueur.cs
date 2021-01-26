@@ -35,7 +35,7 @@ public class ComportementJoueur : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) //glisser 
         {
-            BugSpace = 1;
+            BugSpace = 1; // Empêche le joueur d'utiliser espace en pleine glissade
             saut = false;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
             Joueur.transform.Translate(1, 0, 0);
