@@ -13,9 +13,7 @@ public class ItemARecuperer : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(-Vitesse, 0);  // On dit que l'objet se déplace en x mais pas en y
         bordEcran = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));  // On définit les bords de l'écran
-        Behaviour halo = (Behaviour)gameObject.GetComponent("Halo");
-        halo.enabled = true;
-
+     
     }
 
     // Update is called once per frame
