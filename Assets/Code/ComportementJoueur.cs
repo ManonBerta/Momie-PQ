@@ -8,7 +8,7 @@ public class ComportementJoueur : MonoBehaviour
 {
     public GameObject Joueur;
     public bool toucheSol = true;
-    private bool positionSuperieur = true ;
+    private bool positionSuperieur = true;
     private bool saut = true;
     public float ScoreFloat = 0;
     public int Score = 0;
@@ -19,9 +19,20 @@ public class ComportementJoueur : MonoBehaviour
     public TextMeshProUGUI Vies;
     public Animator animator;
     public TextMeshProUGUI AfficheScore;
-
+    public AudioClip Impact;
+    public AudioClip Saut;
+    public AudioClip Fin;
+    public AudioClip Glissade;
+    public AudioClip Bonus;
+    private AudioSource SonMomie;
+    public AudioSource Musique;
+    public float VolumeDENCULERDEMERDEDEFILSDEPUTE = 0.5f;
+    private bool Mort = false;
     void Start()
     {
+
+        Musique.Play();
+        SonMomie = GetComponent<AudioSource>();
         PanelGameOver.SetActive(false);
         Time.timeScale = 1;
     }
@@ -37,6 +48,7 @@ public class ComportementJoueur : MonoBehaviour
         {
             BugSpace = 1; // Empêche le joueur d'utiliser espace en pleine glissade
             saut = false;
+            SonMomie.PlayOneShot(Glissade, VolumeDENCULERDEMERDEDEFILSDEPUTE);
             animator.SetBool("Dash", true);
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
             Joueur.transform.Translate(1, 0, 0);
@@ -57,6 +69,7 @@ public class ComportementJoueur : MonoBehaviour
             {
                 if (saut)
                 {
+                    SonMomie.PlayOneShot(Saut, VolumeDENCULERDEMERDEDEFILSDEPUTE);
                     GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300)); // fait sauter le personnage
                     toucheSol = false;
                     animator.SetBool("saut", false);
@@ -89,14 +102,17 @@ public class ComportementJoueur : MonoBehaviour
         {
 
         }
-        if (PointsDeVie <= 0)
+        if (PointsDeVie <= 0 && Mort == false)
         {
+            Mort = true;
+            Musique.Stop();
             PanelGameOver.SetActive(true);
+            SonMomie.PlayOneShot(Fin, VolumeDENCULERDEMERDEDEFILSDEPUTE);
             Time.timeScale = 0;
             ScoreDuJoueur = Score;
             PlayerPrefs.SetInt("ScoreDuJoueur", ScoreDuJoueur);
         }
-    
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -108,16 +124,19 @@ public class ComportementJoueur : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Item"))
         {
+            SonMomie.PlayOneShot(Bonus, VolumeDENCULERDEMERDEDEFILSDEPUTE);
             ScoreFloat = ScoreFloat + 100;
             AfficheScore.text = "Score : " + ScoreFloat;
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            SonMomie.PlayOneShot(Impact, VolumeDENCULERDEMERDEDEFILSDEPUTE);
             PointsDeVie = PointsDeVie - 1;
             Vies.text = "Vies : " + PointsDeVie;
             Destroy(other.gameObject);
         }
     }
 }
+
 
