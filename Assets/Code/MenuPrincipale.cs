@@ -15,4 +15,9 @@ public class MenuPrincipale : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+
+    public void Quitter()
+    {
+        Application.Quit();
+    }
 }
