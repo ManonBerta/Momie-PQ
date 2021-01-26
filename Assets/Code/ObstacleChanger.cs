@@ -23,4 +23,12 @@ public class ObstacleChanger : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+       
+            Destroy(other.gameObject);
+        }
+    }
 }

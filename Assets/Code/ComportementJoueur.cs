@@ -9,12 +9,15 @@ public class ComportementJoueur : MonoBehaviour
     public GameObject Joueur;
     public bool toucheSol = true;
     private bool positionSuperieur = true ;
+    private bool saut = true;
     public float ScoreFloat = 0;
     public int Score = 0;
+    public int ScoreDuJoueur;
     private int PointsDeVie = 3;
     public int BugSpace = 0;
     public GameObject PanelGameOver;
     public TextMeshProUGUI Vies;
+    public Animator animator;
     public TextMeshProUGUI AfficheScore;
 
     void Start()
@@ -33,6 +36,7 @@ public class ComportementJoueur : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow)) //glisser 
         {
             BugSpace = 1;
+            saut = false;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
             Joueur.transform.Translate(1, 0, 0);
 
@@ -40,6 +44,7 @@ public class ComportementJoueur : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.DownArrow)) //Rétablir glissade
         {
             BugSpace = 0;
+            saut = true;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, -90);
         }
 
@@ -47,8 +52,13 @@ public class ComportementJoueur : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow)) // sauter
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300)); // fait sauter le personnage
-                toucheSol = false;
+                if (saut)
+                {
+                    GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300)); // fait sauter le personnage
+                    toucheSol = false;
+                    animator.SetBool("saut", false);
+                    saut = false;
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && BugSpace == 0) // chagement de plateforme
@@ -80,6 +90,8 @@ public class ComportementJoueur : MonoBehaviour
         {
             PanelGameOver.SetActive(true);
             Time.timeScale = 0;
+            ScoreDuJoueur = Score;
+            PlayerPrefs.SetInt("ScoreDuJoueur", ScoreDuJoueur);
         }
     
     }
@@ -88,6 +100,8 @@ public class ComportementJoueur : MonoBehaviour
         if (other.gameObject.tag == "Plateforme")
         {
             toucheSol = true;
+            animator.SetBool("saut", true);
+            saut = true;
         }
         if (other.gameObject.CompareTag("Item"))
         {

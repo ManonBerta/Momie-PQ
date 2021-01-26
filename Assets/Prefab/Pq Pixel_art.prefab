@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8977969646796566087}
   - component: {fileID: 7991731873040974620}
   - component: {fileID: 6151151178719819218}
+  - component: {fileID: 3019458473475634032}
+  - component: {fileID: 6063708980398323458}
   m_Layer: 0
   m_Name: Pq Pixel_art
   m_TagString: Item
@@ -156,3 +158,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Vitesse: 12
+--- !u!95 &3019458473475634032
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693904737378653976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4bbfd99bb6b300a498029b0bb7b50020, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!122 &6063708980398323458
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693904737378653976}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278254079
+  m_Size: 0.8
