@@ -12,6 +12,7 @@ public class ComportementJoueur : MonoBehaviour
     private bool saut = true;
     public float ScoreFloat = 0;
     public int Score = 0;
+    public int ScoreDuJoueur;
     private int PointsDeVie = 3;
     public int BugSpace = 0;
     public GameObject PanelGameOver;
@@ -89,6 +90,8 @@ public class ComportementJoueur : MonoBehaviour
         {
             PanelGameOver.SetActive(true);
             Time.timeScale = 0;
+            ScoreDuJoueur = Score;
+            PlayerPrefs.SetInt("ScoreDuJoueur", ScoreDuJoueur);
         }
     
     }

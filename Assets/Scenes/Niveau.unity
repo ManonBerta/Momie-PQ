@@ -763,6 +763,7 @@ MonoBehaviour:
   toucheSol: 1
   ScoreFloat: 0
   Score: 0
+  ScoreDuJoueur: 0
   BugSpace: 0
   PanelGameOver: {fileID: 1482340799}
   Vies: {fileID: 1740270378}
@@ -2977,6 +2978,7 @@ MonoBehaviour:
   toucheSol: 1
   ScoreFloat: 0
   Score: 0
+  ScoreDuJoueur: 0
   BugSpace: 0
   PanelGameOver: {fileID: 1482340799}
   Vies: {fileID: 1740270378}
@@ -5463,6 +5465,7 @@ GameObject:
   - component: {fileID: 2015502370}
   - component: {fileID: 2015502369}
   - component: {fileID: 2015502368}
+  - component: {fileID: 2015502372}
   m_Layer: 5
   m_Name: Menu Principal
   m_TagString: Untagged
@@ -5595,3 +5598,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015502366}
   m_CullTransparentMesh: 0
+--- !u!114 &2015502372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015502366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623ad17adf3faf24096dea98f31f1907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

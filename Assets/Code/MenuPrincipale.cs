@@ -10,4 +10,9 @@ public class MenuPrincipale : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void MenuMS()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
