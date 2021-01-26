@@ -1,31 +1,34 @@
 fileFormatVersion: 2
-guid: 4921f6cc7c69bfb41a20505979c83310
+guid: 6dc11b67fc545b24b8cbea8d76d40893
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5567635236817739018
-    second: animcoursebis_2_0
+      213: -1743837470490854317
+    second: animcoursebis2_0
   - first:
-      213: -167384568965501111
-    second: animcoursebis_2_1
+      213: 3190826349725909430
+    second: animcoursebis2_1
   - first:
-      213: -4372830402307001922
-    second: animcoursebis_2_2
+      213: -6949850215742757514
+    second: animcoursebis2_2
   - first:
-      213: 3563820443033176444
-    second: animcoursebis_2_3
+      213: 1049458663172853343
+    second: animcoursebis2_3
   - first:
-      213: 2834827840196755395
-    second: animcoursebis_2_4
+      213: 1288619125758322901
+    second: animcoursebis2_4
   - first:
-      213: 1507255259875681237
-    second: animcoursebis_2_5
+      213: 6647697383502491643
+    second: animcoursebis2_5
   - first:
-      213: -6634071400393122171
-    second: animcoursebis_2_6
+      213: -7874510981075894147
+    second: animcoursebis2_6
   - first:
-      213: -14124765972242797
-    second: animcoursebis_2_7
+      213: 2796257928270856079
+    second: animcoursebis2_7
+  - first:
+      213: 6931586961920732042
+    second: animcoursebis2_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -57,7 +60,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -71,7 +74,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 20
-  spriteBorder: {x: 0, y: 0, z: 286, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -173,13 +176,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animcoursebis_2_0
+      name: animcoursebis2_0
       rect:
         serializedVersion: 2
         x: 8
         y: 0
         width: 24
-        height: 59
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,17 +190,80 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f2e78e2049cbb2b0800000000000000
-      internalID: -5567635236817739018
+      spriteID: 35c70615f05acc7e0800000000000000
+      internalID: -1743837470490854317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animcoursebis_2_1
+      name: animcoursebis2_1
       rect:
         serializedVersion: 2
         x: 48
+        y: 0
+        width: 24
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b18e5bc8a7184c20800000000000000
+      internalID: 3190826349725909430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animcoursebis2_2
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6752b78fc0c2d8f90800000000000000
+      internalID: -6949850215742757514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animcoursebis2_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ecfd8081d609e00800000000000000
+      internalID: 1049458663172853343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animcoursebis2_4
+      rect:
+        serializedVersion: 2
+        x: 167
         y: 0
         width: 24
         height: 57
@@ -208,83 +274,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94fede11f945dadf0800000000000000
-      internalID: -167384568965501111
+      spriteID: 5d86999744812e110800000000000000
+      internalID: 1288619125758322901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animcoursebis_2_2
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 0
-        width: 24
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb17677dae59053c0800000000000000
-      internalID: -4372830402307001922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animcoursebis_2_3
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 31
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c79844e9fcb357130800000000000000
-      internalID: 3563820443033176444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animcoursebis_2_4
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 0
-        width: 24
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cfb05ea6e4575720800000000000000
-      internalID: 2834827840196755395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animcoursebis_2_5
+      name: animcoursebis2_5
       rect:
         serializedVersion: 2
         x: 207
         y: 0
         width: 24
-        height: 59
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,19 +295,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d3aabe4ca8dae410800000000000000
-      internalID: 1507255259875681237
+      spriteID: bffa5fd9c8d514c50800000000000000
+      internalID: 6647697383502491643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animcoursebis_2_6
+      name: animcoursebis2_6
       rect:
         serializedVersion: 2
         x: 247
         y: 0
         width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d700f01dbfd18b290800000000000000
+      internalID: -7874510981075894147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animcoursebis2_7
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 0
+        width: 32
         height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -313,20 +337,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58e5dfcc53b0fe3a0800000000000000
-      internalID: -6634071400393122171
+      spriteID: f8f34f245cd4ec620800000000000000
+      internalID: 2796257928270856079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animcoursebis_2_7
+      name: animcoursebis2_8
       rect:
         serializedVersion: 2
-        x: 287
+        x: 326
         y: 0
-        width: 31
-        height: 54
+        width: 24
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,8 +358,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e50b5a991ddcff0800000000000000
-      internalID: -14124765972242797
+      spriteID: a8ba303ed91f13060800000000000000
+      internalID: 6931586961920732042
       vertices: []
       indices: 
       edges: []
@@ -343,7 +367,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 8fd555049509dee4face5478566cde29
     internalID: 0
     vertices: []
     indices: 
