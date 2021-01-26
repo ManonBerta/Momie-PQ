@@ -37,17 +37,18 @@ public class ComportementJoueur : MonoBehaviour
         {
             BugSpace = 1; // Empêche le joueur d'utiliser espace en pleine glissade
             saut = false;
+            animator.SetBool("Dash", true);
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
             Joueur.transform.Translate(1, 0, 0);
-            animator.SetBool("Dash", true);
 
         }
         if (Input.GetKeyUp(KeyCode.DownArrow)) //Rétablir glissade
         {
+            animator.SetBool("Dash", false);
             BugSpace = 0;
             saut = true;
             transform.RotateAround(Joueur.transform.position, Vector3.forward, -90);
-            animator.SetBool("Dash", false);
+            
         }
 
         if (toucheSol) // on détecte si notre personnage touche le sol
