@@ -2804,10 +2804,11 @@ MonoBehaviour:
   scarabeePrefab: {fileID: 6439782276828209900, guid: 8df74a1e7afeb514e9660d4f73fbd71c, type: 3}
   pilierPrefab: {fileID: 3608625403461249522, guid: 9ee1a2dc862f25d47b4b86ee38a24f6b, type: 3}
   PetitPotPrefab: {fileID: 7619815900679986095, guid: 359ad30ee0aa26a4da0ff03101162cdc, type: 3}
-  ObstacleDoubleSSPrefab: {fileID: 0}
-  ObstacleDoubleSGPrefab: {fileID: 0}
-  ObstacleDoubleGSPrefab: {fileID: 0}
-  ObstacleDoubleGGPrefab: {fileID: 0}
+  ObstacleDoubleSSPrefab: {fileID: 7270013095651335108, guid: 5becaaaf547f30a4bb9fa06c09632f13, type: 3}
+  ObstacleDoubleSS2Prefab: {fileID: 3357334296678772939, guid: 9ff5c6ee701e4ed4499f7d21826e888b, type: 3}
+  ObstacleDoubleSGPrefab: {fileID: 2744537367563578066, guid: 52103dcc32a433d43b32365c76e44421, type: 3}
+  ObstacleDoubleGSPrefab: {fileID: 6499687321860475814, guid: 6ef746a5172348f41909607d657ee34b, type: 3}
+  ObstacleDoubleGGPrefab: {fileID: 5116868715012022366, guid: fca0294f1fee5f14ca58cf2e09019d99, type: 3}
   pqPrefab: {fileID: 8693904737378653976, guid: 7d8d1a3a047ae6b4387000056e8c0076, type: 3}
   TempsApparitionObstacle: 1.5
   TempsApparitionPQ: 0

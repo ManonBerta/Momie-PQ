@@ -9,6 +9,7 @@ public class BoiteQuiSpawn : MonoBehaviour
     public GameObject pilierPrefab;
     public GameObject PetitPotPrefab;
     public GameObject ObstacleDoubleSSPrefab;
+    public GameObject ObstacleDoubleSS2Prefab;
     public GameObject ObstacleDoubleSGPrefab;
     public GameObject ObstacleDoubleGSPrefab;
     public GameObject ObstacleDoubleGGPrefab;
@@ -31,9 +32,9 @@ public class BoiteQuiSpawn : MonoBehaviour
 
     private void SpawnObstacle() //fonction pour les caisses
     {
-        NombreSpawn = Random.Range(0, 4);
+        NombreSpawn = Random.Range(0, 12);
 
-        if (NombreSpawn == 0)
+        if (NombreSpawn == 0 || NombreSpawn == 4)
         {
             GameObject caisse = Instantiate(caissePrefab) as GameObject;
           
@@ -43,11 +44,11 @@ public class BoiteQuiSpawn : MonoBehaviour
         }
 
 
-        else if (NombreSpawn == 1)
+        else if (NombreSpawn == 1 || NombreSpawn == 5)
         {
             GameObject scarabee = Instantiate(scarabeePrefab) as GameObject;
             
-                scarabee.transform.position = new Vector3(bordEcran.x * -2, -2.05f); //Coordonées où il apparait
+                scarabee.transform.position = new Vector3(bordEcran.x * -2, -1.7f); //Coordonées où il apparait
            
         }
 
@@ -65,13 +66,54 @@ public class BoiteQuiSpawn : MonoBehaviour
             }
         }
 
-        else if (NombreSpawn == 3)
+        else if (NombreSpawn == 3 || NombreSpawn == 6)
         {
             GameObject PetitPot = Instantiate(PetitPotPrefab) as GameObject;
           
                 PetitPot.transform.position = new Vector3(bordEcran.x * -2, -3.52f); //Coordonées où il apparait
            
                
+        }
+
+        else if (NombreSpawn == 7)
+        {
+            GameObject DoublePetitPot = Instantiate(ObstacleDoubleSSPrefab) as GameObject;
+
+           DoublePetitPot.transform.position = new Vector3(bordEcran.x * -2, -3.52f); //Coordonées où il apparait
+
+
+        }
+
+        else if (NombreSpawn == 8)
+        {
+            GameObject DoublePot = Instantiate(ObstacleDoubleSS2Prefab) as GameObject;
+
+            DoublePot.transform.position = new Vector3(bordEcran.x * -2, -3.52f); //Coordonées où il apparait
+
+
+        }
+        else if (NombreSpawn == 9)
+        {
+            GameObject DoubleScara = Instantiate(ObstacleDoubleGGPrefab) as GameObject;
+
+            DoubleScara.transform.position = new Vector3(bordEcran.x * -2, -3.52f); //Coordonées où il apparait
+
+
+        }
+        else if (NombreSpawn == 10)
+        {
+            GameObject DoubleGS = Instantiate(ObstacleDoubleGSPrefab) as GameObject;
+
+            DoubleGS.transform.position = new Vector3(bordEcran.x * -2, -3.52f); //Coordonées où il apparait
+
+
+        }
+        else if (NombreSpawn == 11)
+        {
+            GameObject DoubleSG = Instantiate(ObstacleDoubleSGPrefab) as GameObject;
+
+            DoubleSG.transform.position = new Vector3(bordEcran.x * -2, -3.18f); //Coordonées où il apparait
+
         }
     }
 
