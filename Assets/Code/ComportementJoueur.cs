@@ -8,7 +8,7 @@ public class ComportementJoueur : MonoBehaviour
 {
     public GameObject Joueur;
     public bool toucheSol = true;
-    private bool positionSuperieur = true ;
+    private bool positionSuperieur = true;
     private bool saut = true;
     public float ScoreFloat = 0;
     public int Score = 0;
@@ -19,9 +19,17 @@ public class ComportementJoueur : MonoBehaviour
     public TextMeshProUGUI Vies;
     public Animator animator;
     public TextMeshProUGUI AfficheScore;
+    public AudioClip Impact;
+    public AudioClip Saut;
+    public AudioClip fin;
+    public AudioClip Glissade;
+    public AudioClip Bonus;
+    public AudioClip Musique;
+    public AudioSource Audiosource;
 
     void Start()
     {
+        Audiosource = GetComponent<AudioSource>();
         PanelGameOver.SetActive(false);
         Time.timeScale = 1;
     }
@@ -37,6 +45,7 @@ public class ComportementJoueur : MonoBehaviour
         {
             BugSpace = 1; // Empêche le joueur d'utiliser espace en pleine glissade
             saut = false;
+            Audiosource.PlayOneShot(Glissade, 1f);
             transform.RotateAround(Joueur.transform.position, Vector3.forward, 90);
             Joueur.transform.Translate(1, 0, 0);
             animator.SetBool("Dash", true);
@@ -91,11 +100,12 @@ public class ComportementJoueur : MonoBehaviour
         if (PointsDeVie <= 0)
         {
             PanelGameOver.SetActive(true);
+            Audiosource.PlayOneShot(fin, 1f);
             Time.timeScale = 0;
             ScoreDuJoueur = Score;
             PlayerPrefs.SetInt("ScoreDuJoueur", ScoreDuJoueur);
         }
-    
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -107,16 +117,19 @@ public class ComportementJoueur : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Item"))
         {
+            Audiosource.PlayOneShot(Bonus, 0.7f);
             ScoreFloat = ScoreFloat + 100;
             AfficheScore.text = "Score : " + ScoreFloat;
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            Audiosource.PlayOneShot(Impact, 0.7f);
             PointsDeVie = PointsDeVie - 1;
             Vies.text = "Vies : " + PointsDeVie;
             Destroy(other.gameObject);
         }
     }
 }
+
 
