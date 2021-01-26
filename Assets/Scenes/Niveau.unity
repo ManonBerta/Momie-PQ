@@ -835,7 +835,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Joueur: {fileID: 1234334722}
-  HBjoueur: {fileID: 1234334728}
   toucheSol: 1
   ScoreFloat: 0
   Score: 0
@@ -1014,7 +1013,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234334722}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 931a011d9fdb4d44f8e383d5fbe95bca, type: 2}
   m_CullingMode: 0
@@ -3052,7 +3051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Joueur: {fileID: 1234334722}
-  HBjoueur: {fileID: 0}
   toucheSol: 1
   ScoreFloat: 0
   Score: 0
